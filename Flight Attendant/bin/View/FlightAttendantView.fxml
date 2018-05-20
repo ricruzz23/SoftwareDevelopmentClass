@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import application.SeatButton?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.geometry.Insets?>
+
+<!-- 
+
+This file is the View file for the main scene in the Flight Attendant applicaiton
+
+Author: Roger Cruz
+Date: 5/2018
+
+ -->
+
+<Pane fx:controller="Controller.SeatController" xmlns:fx="http://javafx.com/fxml/1" >
+	<VBox spacing="20">
+		<padding>
+			<Insets bottom="20" top="20" left="20" right="20" />
+		</padding>
+		<Label id="Label"> Press Buttons to Call Flight Attendant</Label>
+		<Pane>
+			<HBox spacing="10">
+				<SeatButton id="Button" fx:id="seat1" text="Seat 1A" onAction="#callFlightAttendant"/>
+				<SeatButton id="Button" fx:id="seat2" text="Seat 1B" onAction="#callFlightAttendant"/>
+				<SeatButton id="Button" fx:id="seat3" text="Seat 1C" onAction="#callFlightAttendant"/>
+				<SeatButton id="Button" fx:id="seat4" text="Seat 1D" onAction="#callFlightAttendant"/>
+				<SeatButton id="Button" fx:id="seat5" text="Seat 1E" onAction="#callFlightAttendant"/>
+			</HBox>
+		</Pane>
+		<Separator orientation="HORIZONTAL" />
+		<Label id="Label">Flight Attendant Notification Panel</Label>
+		<HBox spacing="10" alignment="CENTER">
+			<VBox spacing="10" >
+				<Label text="Assistance needed at following seat(s):" />
+				<ListView fx:id="callingListView" maxHeight="150">
+					<items>
+						<FXCollections fx:factory="observableArrayList" />
+					</items>
+				</ListView>
+			</VBox>
+			<VBox spacing="10" alignment="CENTER_LEFT">
+				<SeatButton text="Delete Selected" onAction="#removeCallFromList"/>
+				<SeatButton text="Delete All" onAction="#removeAllCallsFromList"/>
+			</VBox>
+		</HBox>
+	</VBox>
+</Pane>
+

@@ -1,0 +1,31 @@
+/*
+ * This file decorates the UI of the Flight Attendant application's main scene.
+ * 
+ * */
+root
+{
+	-fx-padding: 10 10 10 10;
+}
+
+#Button{
+    -fx-background-radius: 5,4,3,5;
+    -fx-background-insets: 0,1,2,0;
+    -fx-text-fill: black;
+    -fx-font-family: "Arial";
+    -fx-font-size: 12px;
+    -fx-padding: 10 20 10 20;
+}
+
+#Button:hover
+{
+    -fx-background-color: #cfe0e8;
+    -fx-text-fill: #336699;
+}
+
+#Label
+{
+	-fx-font-size: 30px;
+}
+
+
+
